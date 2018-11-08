@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <chart></chart>
+    <chart-circle></chart-circle>
+    <chart-area></chart-area>
+    <chart-candle></chart-candle>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Chart from './components/Chart.vue';
+import ChartCircle from './components/ChartCircle.vue';
+import ChartArea from './components/ChartArea.vue';
+import ChartCandle from './components/ChartCandle.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Chart,
+    ChartCircle,
+    ChartArea,
+    ChartCandle
   }
-}
+};
 </script>
 
 <style>
