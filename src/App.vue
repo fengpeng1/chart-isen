@@ -49,8 +49,10 @@
           <v-flex xs6><chart-candle></chart-candle></v-flex>
         </v-layout>
         <v-layout>
-
             <v-flex xs3><progression></progression></v-flex>
+            <card><calendar></calendar></card>
+            <card><customized-table data-app></customized-table></card>
+            <card><customized-list></customized-list></card>
         </v-layout>
       </v-container>
     </v-content>
@@ -68,20 +70,28 @@ import SemiCircleGauge from './components/SemiCircleGauge';
 import Timer from './components/Timer';
 import TitleWidget from "./components/TitleWidget";
 import ImageWidget from "./components/ImageWidget";
+import Calendar from './components/Calendar';
+import Card from './components/Card';
+import CustomizedTable from './components/CustomizedTable'
+import CustomizedList from './components/CustomizedList'
 
 export default {
   name: 'app',
   components: {
       ImageWidget,
       TitleWidget,
-    Chart,
-    ChartCircle,
-    ChartArea,
-    ChartCandle,
-    Top3,
-    Progression,
-    SemiCircleGauge,
-    Timer
+      Calendar,
+      Card,
+      Chart,
+      ChartCircle,
+      ChartArea,
+      ChartCandle,
+      Top3,
+      Progression,
+      SemiCircleGauge,
+      Timer,
+      CustomizedTable,
+      CustomizedList
   },
   data () {
       return {

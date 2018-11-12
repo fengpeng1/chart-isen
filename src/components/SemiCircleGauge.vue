@@ -1,13 +1,11 @@
 <template>
-  <div class="card">
-    <div class="chart">
-      <apexcharts class="apex" width="380" type="radialBar" :options="options" :series="series"></apexcharts>
-      <div class="button">
-        <button class="up" @click="progress">Progress</button>
-      </div>
-      <div class="button">
-        <button class="up" @click="regress">Regress</button>
-      </div>
+  <div class="chart">
+    <apexcharts class="apex" width="380" type="radialBar" :options="options" :series="series"></apexcharts>
+    <div class="button">
+      <button class="up" @click="progress">Progress</button>
+    </div>
+    <div class="button">
+      <button class="up" @click="regress">Regress</button>
     </div>
   </div>
 </template>
@@ -69,19 +67,6 @@
 </script>
 
 <style>
-
-  .card{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
-    max-width: fit-content;
-    margin: 2%;
-  }
-
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  }
-
   .up {
     background: #eee;
     border: 0;
