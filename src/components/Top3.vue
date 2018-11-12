@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <v-card height="100%" class="widget">
         <div class="card-title"><h1>Classement</h1></div>
         <div class="chip">
             <span class="chip-avatar"><img src="../assets/gold-medal.svg"/></span>
@@ -16,7 +16,7 @@
             <span class="chip-name">Troisième</span>
             <span class="chip-score">0</span>
         </div>
-    </div>
+    </v-card>
 
 </template>
 
@@ -27,18 +27,6 @@
 </script>
 
 <style scoped>
-
-    .card{
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        border-radius: 5px; /* 5px rounded corners */
-        max-width: 300px;
-        margin: 2%;
-    }
-
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
 
     .card-title {
         padding: 2px 16px;
