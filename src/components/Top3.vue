@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div>
         <div class="card-title"><h1>Classement</h1></div>
         <div class="chip">
             <span class="chip-avatar"><img src="../assets/gold-medal.svg"/></span>

@@ -1,5 +1,4 @@
 <template>
-  <div class="card">
     <div class="chart">
       <apexcharts class="apex" width="380" type="radialBar" :options="options" :series="series"></apexcharts>
       <div class="button">
@@ -9,7 +8,6 @@
         <button class="up" @click="regress">Regress</button>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
