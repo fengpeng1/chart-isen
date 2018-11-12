@@ -3,12 +3,14 @@
     <card><chart></chart></card>
     <card><chart-circle></chart-circle></card>
     <card><chart-area></chart-area></card>
-    <card><chart-candle></chart-candle></card>
+    <chart-candle></chart-candle>
     <card><top3></top3></card>
     <card><progression></progression></card>
     <card><semi-circle-gauge></semi-circle-gauge></card>
-    <card><timer date="Nov 18, 2018 16:00:00"></timer></card>
+    <card><timer date="Nov 16, 2018 16:00:00"></timer></card>
     <card><calendar></calendar></card>
+    <card><customized-table data-app></customized-table></card>
+    <card><customized-list></customized-list></card>
   </div>
 </template>
 
@@ -23,6 +25,8 @@ import SemiCircleGauge from './components/SemiCircleGauge';
 import Timer from './components/Timer';
 import Calendar from './components/Calendar';
 import Card from './components/Card';
+import CustomizedTable from './components/CustomizedTable'
+import CustomizedList from './components/CustomizedList'
 
 export default {
   name: 'app',
@@ -36,9 +40,13 @@ export default {
     Top3,
     Progression,
     SemiCircleGauge,
-    Timer
+    Timer,
+    CustomizedTable,
+    CustomizedList
   }
 };
+
+
 </script>
 
 <style>
