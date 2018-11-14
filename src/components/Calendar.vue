@@ -1,6 +1,8 @@
 <template>
-    <vue-event-calendar :events="demoEvents" class="calendar">
-    </vue-event-calendar>
+    <v-card height="98%" class="widget">
+        <vue-event-calendar :events="demoEvents" class="calendar">
+        </vue-event-calendar>
+    </v-card>
 </template>
 
 <script>
@@ -19,8 +21,4 @@
 </script>
 
 <style scoped>
-    .calendar{
-        height: 500px;
-        width: 1000px;
-    }
 </style>

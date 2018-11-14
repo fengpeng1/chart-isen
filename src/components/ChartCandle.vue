@@ -1,8 +1,8 @@
 <template>
-  <div class="chart">
-    <apexcharts height="350" type="candlestick" :options="options" :series="series"></apexcharts>
+  <v-card height="98%" class="widget">
+    <apexcharts width="100%" type="candlestick" :options="options" :series="series"></apexcharts>
 
-  </div>
+  </v-card>
 </template>
 
 <script>

@@ -1,13 +1,13 @@
 <template>
-  <div class="chart">
-    <apexcharts class="apex" width="380" type="radialBar" :options="options" :series="series"></apexcharts>
+  <v-card height="98%" class="widget">
+    <apexcharts class="apex" width="" type="radialBar" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="up" @click="progress">Progress</button>
     </div>
     <div class="button">
       <button class="up" @click="regress">Regress</button>
     </div>
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -66,23 +66,18 @@
     };
 </script>
 
-<style>
+<style scoped>
   .up {
     background: #eee;
     border: 0;
     position: relative;
   }
-  .chart {
-    display: flex;
-  }
-  chart.apex {
-    float: left;
-  }
-  chart.button {
+
+  widget.button {
     float: right;
     vertical-align: center;
   }
-  chart.button.btse {
+  widget.button.btse {
     vertical-align: center;
   }
 </style>

@@ -1,17 +1,19 @@
 <template>
+    <v-card height="98%" class="widget">
     <!-- Material Design Icons are not working for now-->
-    <v-data-table
-            :hide-headers="true"
-            :hide-actions="true"
-            :items="desserts"
-            class="elevation-1"
-            :dark="true"
-    >
-        <template slot="items" slot-scope="props">
-            <td>{{ props.item.name }}</td>
-            <td class="text-xs-right">{{ props.item.calories }}</td>
-        </template>
-    </v-data-table>
+        <v-data-table height="100%"
+                :hide-headers="true"
+                :hide-actions="true"
+                :items="desserts"
+                class="elevation-1"
+                :dark="true"
+        >
+            <template slot="items" slot-scope="props">
+                <td>{{ props.item.name }}</td>
+                <td class="text-xs-right">{{ props.item.calories }}</td>
+            </template>
+        </v-data-table>
+    </v-card>
 </template>
 
 <script>

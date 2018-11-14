@@ -1,12 +1,12 @@
 <template>
-  <div class="chart">
-    <apexcharts class="apex" width="500" type="bar" :options="options" :series="series"></apexcharts>
+  <v-card height="98%" class="widget">
+     <apexcharts class="apex" width="95%" type="bar" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="btse" @click="update">updata</button>
       <input v-model="number" type="number">
       <button @click="change">change</button>
     </div>
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -61,21 +61,10 @@ export default {
     }
   }
 };
+
 </script>
 
 <style scoped>
-.chart {
-  display: flex;
-}
-chart.apex {
-  float: left;
-}
-chart.button {
-  float: right;
-  vertical-align: center;
-}
-chart.button.btse {
-  vertical-align: center;
-}
+
 </style>
 

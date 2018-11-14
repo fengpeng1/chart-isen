@@ -1,8 +1,8 @@
 <template>
-  <div class="chart">
-    <apexcharts class="apex" width="500" type="area" :options="options" :series="series"></apexcharts>
+  <v-card height="98%" class="widget">
+   <apexcharts class="apex" width="100%" type="area" :options="options" :series="series"></apexcharts>
 
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -49,25 +49,22 @@ export default {
           name: 'series2',
           data: [11, 32, 45, 32, 34, 52, 41]
         }
-      ]
+      ],
     };
   }
 };
+
+
 </script>
 
 <style scoped>
-.chart {
-  display: flex;
-}
-chart.apex {
-  float: left;
-}
-chart.button {
+
+/*widget.button {
   float: right;
   vertical-align: center;
 }
-chart.button.btse {
+widget.button.btse {
   vertical-align: center;
-}
+}*/
 </style>
 

@@ -1,10 +1,10 @@
 <template>
-  <div class="chart">
-    <apexcharts class="apex" width="380" type="pie" :options="options" :series="series"></apexcharts>
+  <v-card height="98%" class="widget">
+    <apexcharts class="apex" width="100%" type="pie" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="up" @click="update">update</button>
     </div>
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -34,23 +34,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .up {
   background: #eee;
   border: 0;
   position: relative;
 }
-.chart {
-  display: flex;
-}
-chart.apex {
-  float: left;
-}
-chart.button {
+
+widget.button {
   float: right;
   vertical-align: center;
 }
-chart.button.btse {
+widget.button.btse {
   vertical-align: center;
 }
 </style>
