@@ -1,12 +1,10 @@
 <template>
     <v-card height="100%" class="widget">
-        <div class="title"><h3>TITRE</h3></div>
-        <div>
-            <v-img
-                :src="require('@/assets/imagejesus.jpg')">
-            </v-img>
+        <div class="title"><h3>Responsable des responsables</h3></div>
+        <div class="img-container">
+            <img src="../assets/pierre_le_bg.jpg"/>
         </div>
-        <div class="title-comment">Petit commentaire</div>
+        <div class="title-comment">En plus il est tout beau</div>
     </v-card>
 </template>
 
@@ -20,7 +18,23 @@
 
 <style scoped>
 
-    .title-comment {
-        font-style: italic;
+    .widget {
+        background-color: #3C3744;
+        padding: 10px;
+        color: #F5853F;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .img-container {
+        min-width: 0;
+        min-height: 0;
+    }
+
+    img {
+        max-width: 40%;
+        height: auto;
     }
 </style>
