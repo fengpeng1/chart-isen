@@ -14,12 +14,18 @@
 
 <style scoped>
 
-    .card-title {
-        padding: 2px 16px;
-        margin: 2%;
+    .widget {
+        background-color: #3C3744;
+        padding: 10px;
+        color: #F5853F;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
-    .title-comment {
-        font-style: italic;
+    .card-title {
+        font-size: 48px;
+        font-weight: bold;
     }
 </style>
