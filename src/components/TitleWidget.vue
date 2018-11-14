@@ -14,12 +14,38 @@
 
 <style scoped>
 
-    .card-title {
-        padding: 2px 16px;
-        margin: 2%;
+    .widget{
+        position: relative;
+        background-color: #3C3744;
+        padding: 10px;
+        color: #F5853F;
+        min-width: 260px;
+    }
+
+
+
+    .title {
+        float: top;
+        margin-top: 15px;
+    }
+
+    .card-title{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 48px;
+        font-weight: bold;
+        height: auto;
     }
 
     .title-comment {
+        position: absolute;
+        text-align: center;
         font-style: italic;
+        font-size: 14px;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 25px;
     }
 </style>
