@@ -1,5 +1,5 @@
 <template>
-    <v-card height="100%" class="widget">
+    <v-card height="94%" class="widget">
         <div class="title"><h3>Rendez-vous client</h3></div>
         <div class="timer">
             <div class="block">

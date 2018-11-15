@@ -1,5 +1,5 @@
 <template>
-    <v-card height="100%" class="widget">
+    <v-card height="94%" class="widget">
         <div class="title"><h3>Responsable des responsables</h3></div>
         <div class="img-container">
             <img src="../assets/pierre_le_bg.jpg"/>

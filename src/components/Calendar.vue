@@ -1,5 +1,5 @@
 <template>
-    <v-card height="92%" class="widget">
+    <v-card height="94%" class="widget">
         <vue-event-calendar :events="demoEvents" class="calendar">
         </vue-event-calendar>
     </v-card>
