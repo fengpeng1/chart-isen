@@ -1,5 +1,5 @@
 <template>
-    <v-card height="98%" class="widget">
+    <v-card height="94%" class="widget">
     <!-- Material Design Icons are not working for now-->
         <v-data-table height="100%"
                 :hide-headers="true"

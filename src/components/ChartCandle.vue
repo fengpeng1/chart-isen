@@ -1,6 +1,6 @@
 <template>
-  <v-card height="98%" class="widget">
-    <apexcharts width="100%" type="candlestick" :options="options" :series="series"></apexcharts>
+  <v-card height="94%" class="widget">
+    <apexcharts width="95%" type="candlestick" :options="options" :series="series"></apexcharts>
 
   </v-card>
 </template>

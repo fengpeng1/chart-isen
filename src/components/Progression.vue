@@ -1,6 +1,6 @@
 <template>
-    <v-card height="98%" class="widget">
-      <apexcharts class="apex" width="100%" type="radialBar" :options="options" :series="series"></apexcharts>
+    <v-card height="94%" class="widget">
+      <apexcharts class="apex" width="95%" type="radialBar" :options="options" :series="series"></apexcharts>
       <div class="button">
         <button class="up" @click="progress">Progress</button>
       </div>

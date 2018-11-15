@@ -1,5 +1,5 @@
 <template>
-  <v-card height="98%" class="widget">
+  <v-card height="94%" class="widget">
     <apexcharts class="apex" width="" type="radialBar" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="up" @click="progress">Progress</button>
