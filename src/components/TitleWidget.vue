@@ -1,6 +1,6 @@
 <template>
     <v-card height="100%" class="widget">
-        <div class="title"><h3>TITRE</h3></div>
+        <div class="title"><h3>Titre</h3></div>
         <div class="card-title"><h1>2018</h1></div>
         <div class="title-comment">Petit commentaire</div>
     </v-card>
