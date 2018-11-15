@@ -35,26 +35,28 @@
     <v-content>
       <v-container>
         <v-layout row wrap>
-          <v-flex lg3><title-widget></title-widget></v-flex>
-          <v-flex lg3><image-widget></image-widget></v-flex>
-          <v-flex lg3><timer date="Nov 16, 2018 16:00:00"></timer></v-flex>
-          <v-flex lg3><top3></top3></v-flex>
+          <v-flex md3><title-widget></title-widget></v-flex>
+          <v-flex md3><image-widget></image-widget></v-flex>
+          <v-flex md3><timer date="Nov 16, 2018 16:00:00"></timer></v-flex>
+          <v-flex md3><top3></top3></v-flex>
         </v-layout>
-        <v-layout row>
-          <v-flex lg6><chart></chart></v-flex>
-          <v-flex lg6><chart-circle></chart-circle></v-flex>
+        <v-layout row wrap>
+          <v-flex md6>
+            <v-flex md12><chart-area></chart-area></v-flex>
+            <v-layout row wrap>
+              <v-flex md6><progression></progression></v-flex>
+              <v-flex md6><chart-circle></chart-circle></v-flex>
+            </v-layout>
+          </v-flex>
+          <v-flex md6><calendar></calendar></v-flex>
         </v-layout>
-        <v-layout row>
-          <v-flex lg6><chart-area></chart-area></v-flex>
-          <v-flex lg6><chart-candle></chart-candle></v-flex>
+        <v-layout row wrap>
+          <v-flex md6><chart></chart></v-flex>
+          <v-flex md6><chart-candle></chart-candle></v-flex>
         </v-layout>
-        <v-layout row>
-            <v-flex lg3><progression></progression></v-flex>
-            <v-flex lg9><calendar></calendar></v-flex>
-        </v-layout>
-          <v-layout row>
-            <v-flex lg6><customized-table data-app></customized-table></v-flex>
-            <v-flex lg6><customized-list></customized-list></v-flex>
+          <v-layout row wrap>
+            <v-flex md9><customized-table data-app></customized-table></v-flex>
+            <v-flex md3><customized-list></customized-list></v-flex>
         </v-layout>
       </v-container>
     </v-content>

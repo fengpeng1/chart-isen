@@ -1,6 +1,6 @@
 <template>
     <!-- Material Design Icons are not working for now-->
-    <v-card height="98%" class="widget">
+    <v-card height="94%" class="widget">
         <v-data-table height="100%"
                 :headers="headers"
                 :items="desserts"

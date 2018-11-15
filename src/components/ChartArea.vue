@@ -1,6 +1,6 @@
 <template>
-  <v-card height="98%" class="widget">
-   <apexcharts class="apex" width="100%" type="area" :options="options" :series="series"></apexcharts>
+  <v-card height="94%" class="widget">
+   <apexcharts class="apex" width="95%" type="area" :options="options" :series="series"></apexcharts>
 
   </v-card>
 </template>
@@ -59,12 +59,12 @@ export default {
 
 <style scoped>
 
-/*widget.button {
+widget.button {
   float: right;
   vertical-align: center;
 }
 widget.button.btse {
   vertical-align: center;
-}*/
+}
 </style>
 

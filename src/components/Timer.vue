@@ -1,5 +1,5 @@
 <template>
-    <v-card height="98%" class="widget">
+    <v-card height="94%" class="widget">
         <div class="card-title"><h1>Timer</h1></div>
         <div class="timer">
             {{days}} jours {{hours}}h {{minutes}}m {{seconds}}s

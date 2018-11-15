@@ -1,6 +1,6 @@
 <template>
-  <v-card height="98%" class="widget">
-    <apexcharts class="apex" width="100%" type="pie" :options="options" :series="series"></apexcharts>
+  <v-card height="94%" class="widget">
+    <apexcharts class="apex" width="95%" type="pie" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="up" @click="update">update</button>
     </div>

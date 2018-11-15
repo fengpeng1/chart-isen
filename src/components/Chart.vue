@@ -1,5 +1,5 @@
 <template>
-  <v-card height="98%" class="widget">
+  <v-card height="94%" class="widget">
      <apexcharts class="apex" width="95%" type="bar" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="btse" @click="update">updata</button>

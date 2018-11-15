@@ -1,5 +1,5 @@
 <template>
-    <v-card height="98%" class="widget">
+    <v-card height="94%" class="widget">
         <div class="card-title"><h1>Classement</h1></div>
         <div class="chip">
             <span class="chip-avatar"><img src="../assets/gold-medal.svg"/></span>

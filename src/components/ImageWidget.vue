@@ -1,5 +1,5 @@
 <template>
-    <v-card height="98%" class="widget">
+    <v-card height="94%" class="widget">
         <div class="title"><h3>TITRE</h3></div>
         <div>
             <v-img
