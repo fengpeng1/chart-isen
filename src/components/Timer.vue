@@ -1,8 +1,23 @@
 <template>
-    <v-card height="98%" class="widget">
-        <div class="card-title"><h1>Timer</h1></div>
+    <v-card height="100%" class="widget">
+        <div class="title"><h3>Rendez-vous client</h3></div>
         <div class="timer">
-            {{days}} jours {{hours}}h {{minutes}}m {{seconds}}s
+            <div class="block">
+                <div class="value">{{days | two_digits}}</div>
+                <div class="unit">Jours</div>
+            </div>
+            <div class="block">
+                <div class="value">{{hours | two_digits}}</div>
+                <div class="unit">Heures</div>
+            </div>
+            <div class="block">
+                <div class="value">{{minutes | two_digits}}</div>
+                <div class="unit">Minutes</div>
+            </div>
+            <div class="block">
+                <div class="value">{{seconds | two_digits}}</div>
+                <div class="unit">Secondes</div>
+            </div>
         </div>
     </v-card>
 </template>
@@ -53,13 +68,35 @@
 </script>
 
 <style scoped>
-
-    .widget:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    .widget {
+        background-color: #3C3744;
+        padding: 10px;
+        color: #F5853F;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .card-title {
-        padding: 2px 16px;
-        margin: 2%;
+    .timer {
+        display: flex;
+        justify-content: space-around;
+        overflow: hidden;
+        max-height: 80%;
+        flex: 1 1 auto;
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 20%;
+    }
+
+    .block .value {
+        font-size: 48px;
+    }
+
+    .block .unit{
+        font-size: 14px;
     }
 </style>
