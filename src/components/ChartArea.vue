@@ -16,6 +16,9 @@ export default {
   data: function() {
     return {
       options: {
+          chart: {
+              foreColor: '#fff'
+          },
         dataLabels: {
           enabled: false
         },
@@ -40,6 +43,9 @@ export default {
           }
         }
       },
+        legend: {
+          show: true
+        },
       series: [
         {
           name: 'series1',
@@ -66,5 +72,8 @@ widget.button {
 widget.button.btse {
   vertical-align: center;
 }
+    .widget {
+        background-color: #3C3744;
+    }
 </style>
 

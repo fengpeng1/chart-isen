@@ -17,7 +17,11 @@ export default {
   },
   data: function() {
     return {
-      options: {},
+      options: {
+          chart: {
+              foreColor: '#fff'
+          }
+      },
       series: [90, 55, 41, 17, 15]
     };
   },
@@ -48,5 +52,9 @@ widget.button {
 widget.button.btse {
   vertical-align: center;
 }
+
+  .widget {
+    background: #3c3744;
+  }
 </style>
 

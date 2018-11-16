@@ -22,6 +22,7 @@ export default {
       number: [],
       options: {
         chart: {
+            foreColor: '#fff',
           id: 'vuechart-example'
         },
         xaxis: {
@@ -65,6 +66,8 @@ export default {
 </script>
 
 <style scoped>
-
+  .widget {
+    background: #3c3744;
+  }
 </style>
 

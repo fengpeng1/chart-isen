@@ -21,6 +21,9 @@ export default {
   data: function() {
     return {
       options: {
+          chart: {
+              foreColor: '#fff'
+          },
           legend:{
               show: false
           },
@@ -56,6 +59,8 @@ export default {
 </script>
 
 <style scoped>
-
+    .widget {
+        background: #3c3744;
+    }
 </style>
 

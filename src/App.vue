@@ -37,7 +37,7 @@
         <v-layout row wrap>
           <v-flex md3><title-widget></title-widget></v-flex>
           <v-flex md3><image-widget></image-widget></v-flex>
-          <v-flex md3><timer date="Nov 16, 2018 16:00:00"></timer></v-flex>
+          <v-flex md3><timer date="Nov 16, 2018 14:30:00"></timer></v-flex>
           <v-flex md3><top3></top3></v-flex>
         </v-layout>
         <v-layout row wrap>

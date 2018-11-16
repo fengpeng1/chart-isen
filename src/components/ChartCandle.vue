@@ -16,6 +16,9 @@ export default {
   data: function() {
     return {
       options: {
+          chart: {
+              foreColor: '#fff'
+          },
         title: {
           text: 'CandleStick Chart',
           align: 'left'
@@ -40,6 +43,9 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
+  .widget {
+    background: #3c3744;
+  }
 </style>
 
