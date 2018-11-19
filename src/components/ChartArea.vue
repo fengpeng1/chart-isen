@@ -8,6 +8,8 @@
 <script>
 import VueApexCharts from 'vue-apexcharts';
 
+import NodesAPI from '../services/api/Nodes'
+
 export default {
   name: 'ChartArea',
   components: {
@@ -46,18 +48,21 @@ export default {
         legend: {
           show: true
         },
-      series: [
-        {
-          name: 'series1',
-          data: [31, 40, 28, 51, 42, 109, 100]
-        },
-        {
-          name: 'series2',
-          data: [11, 32, 45, 32, 34, 52, 41]
-        }
-      ],
+      series: [],
     };
-  }
+  },
+    mounted() {
+        this.series = [
+            {
+                name: 'series1',
+                data: [50, 25, 78, 78, 42, 109, 100]
+            },
+            {
+                name: 'series2',
+                data: [11, 32, 45, 32, 34, 52, 41]
+            }
+        ]
+    }
 };
 
 

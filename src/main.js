@@ -3,8 +3,15 @@ import Vuetify from 'vuetify'
 import vueEventCalendar from 'vue-event-calendar'
 import 'vuetify/dist/vuetify.min.css'
 import 'vue-event-calendar/dist/style.css'
+import axios from 'axios'
 import App from './App.vue';
 
+
+axios.defaults.baseURL = 'https://agsapi.noolitic.com/api/v1'
+axios.defaults.headers = {
+    'Access-Control-Allow-Origin': 'https://agsapi.noolitic.com',
+    'Authorization': 'Bearer d201aed7-c891-4c17-8b7e-fc5eecf7bff6'
+}
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify, {
