@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 export default {
-    getNodes() {
-        return axios.get('/node')
+    getOtas() {
+        return axios.get('/ota')
             .then (response => {
                 return response.data
             })
