@@ -6,5 +6,11 @@ export default {
             .then (response => {
                 return response.data
             })
+    },
+    getNodeByMac(mac) {
+        return axios.get('/node/' + mac)
+            .then (response => {
+                return response.data
+            })
     }
 }

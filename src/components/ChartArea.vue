@@ -52,6 +52,10 @@ export default {
     };
   },
     mounted() {
+      NodesAPI.getNodeByMac('4e4f0000000014c1')
+          .then(node => {
+              console.log(node.batteryHistory)
+          })
         this.series = [
             {
                 name: 'series1',
