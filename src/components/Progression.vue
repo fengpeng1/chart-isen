@@ -1,28 +1,37 @@
 <template>
     <v-card height="94%" class="widget">
-      <apexcharts class="apex" width="95%" type="radialBar" :options="options" :series="series"></apexcharts>
-      <div class="button">
+        <div class="titleprogr"><h3>{{titre}}</h3></div>
+      <apexcharts class="apex" width="100%" type="radialBar" :options="options" :series="series"></apexcharts>
+
+      <!--<div class="button">
         <button class="up" @click="progress">Progress</button>
       </div>
       <div class="button">
         <button class="up" @click="regress">Regress</button>
-      </div>
+      </div>-->
     </v-card>
 </template>
 
 <script>
 import VueApexCharts from 'vue-apexcharts';
+import NodesAPI from '../services/api/Nodes'
 
 export default {
   name: 'Progression',
   components: {
     apexcharts: VueApexCharts
   },
+    props: {
+        titre: {
+            type: String,
+            required: true
+        }
+    },
   data: function() {
     return {
       options: {
           chart: {
-              foreColor: '#fff'
+              foreColor: '#000000'
           },
           legend:{
               show: false
@@ -30,9 +39,9 @@ export default {
           dataLabels:{
             enabled: false
           },
-          labels:['Progression']
+          labels:[]
       },
-      series: [80],
+      series: [],
     };
   },
   methods: {
@@ -54,13 +63,26 @@ export default {
           });
           this.series = newData;
       }
-  }
+  },
+    mounted() {
+        NodesAPI.getNodes()
+            .then(node => {
+                var nbConnected = 0;
+                for (let o of node) {
+                    if (o.isConnected) {nbConnected ++;}
+                }
+                var percentage = Math.round((100*nbConnected)/Object.keys(node).length);
+                this.series.push(percentage);
+                this.options.labels.push(nbConnected);
+            })
+    }
 };
 </script>
 
 <style scoped>
-    .widget {
-        background: #3c3744;
-    }
+.titleprogr {
+    margin-top: 5%;
+}
+
 </style>
 
