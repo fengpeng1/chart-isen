@@ -18,7 +18,7 @@ export default {
     return {
       options: {
           chart: {
-              foreColor: '#fff'
+              foreColor: '#000000'
           },
         dataLabels: {
           enabled: false
