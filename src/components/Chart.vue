@@ -1,12 +1,13 @@
 <template>
-  <div class="chart">
+  <!-- <div class="chart">
     <apexcharts class="apex" width="500" type="bar" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="btse" @click="update">updata</button>
       <input v-model="number" type="number">
       <button @click="change">change</button>
     </div>
-  </div>
+  </div> -->
+  <div>sss</div>
 </template>
 
 <script>
@@ -39,6 +40,17 @@ export default {
         this.series = res.data.series;
       }
     },
+    // getChartInfo() {
+    //   let config = { Authorization: 'd201aed7-c891-4c17-8b7e-fc5eecf7bff6' };
+    //   axios
+    //     .get(
+    //       'https://agsapi.noolitic.com/api/v1/node/bypage?page=1&limit=100&mac=null&serial=null&sort=mac&dir=asc?'
+    //     )
+    //     .then(this.getChartInfoSucc);
+    // },
+    // getChartInfoSucc(res) {
+    //   console.log(res);
+    // },
     update() {
       const max = 100;
       const min = 0;
