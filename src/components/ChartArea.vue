@@ -1,7 +1,6 @@
 <template>
-  <v-card height="94%" class="widget">
-   <apexcharts class="apex" width="95%" type="area" :options="options" :series="series"></apexcharts>
-
+  <v-card height="94%" class="widget" overflow-hidden>
+      <apexcharts class="apex" width="100%" type="area" :options="options" :series="series"></apexcharts>
   </v-card>
 </template>
 
@@ -81,8 +80,7 @@ widget.button {
 widget.button.btse {
   vertical-align: center;
 }
-    .widget {
-        background-color: #3C3744;
-    }
+
+
 </style>
 

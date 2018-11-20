@@ -5,7 +5,7 @@ import 'vuetify/dist/vuetify.min.css'
 import 'vue-event-calendar/dist/style.css'
 import axios from 'axios'
 import App from './App.vue';
-
+import ApexCharts from 'apexcharts'
 
 axios.defaults.baseURL = 'https://agsapi.noolitic.com/api/v1'
 axios.defaults.headers = {
@@ -32,3 +32,5 @@ Vue.filter('two_digits', (value) => {
 new Vue({
   render: h => h(App)
 }).$mount('#app');
+
+

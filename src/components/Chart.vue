@@ -1,6 +1,6 @@
 <template>
-  <v-card height="94%" class="widget">
-     <apexcharts class="apex" width="95%" type="bar" :options="options" :series="series"></apexcharts>
+  <v-card height="100%" class="widget">
+    <apexcharts class="apex" width="100%" height="500px" type="bar" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="btse" @click="update">updata</button>
       <input v-model="number" type="number">
@@ -60,14 +60,17 @@ export default {
         }
       ];
     }
-  }
+  },
+    mounted: function() {
+      console.log("1: "+this.series[0].data);
+      console.log("2: "+this.series[0].data);
+    }
 };
+
 
 </script>
 
 <style scoped>
-  .widget {
-    background: #3c3744;
-  }
+
 </style>
 
