@@ -43,28 +43,30 @@ export default {
   },
     mounted() {
 
-      //Création de la DATA
-      let Graph = [];
+
 
       //Création d'un objet Batterie avec index + objet item qui groupe tout les x: temps et y :niveau de batterie
       NodesAPI.getNodes()
           .then(node => {
+              //Création de la DATA
+              let Graph = [];
               for (let item of node){
                   var batterie = {};
                   batterie.name = "Serie";
                   batterie.data = [];
                   for (let o of item.batteryHistory) {
-                      var item = {};
+                      let item = {};
                       item.x = o.timeStamp;
                       item.y = o.level;
                       batterie.data.push(item);
                   }
                   Graph.push(batterie);
               }
+              this.series = Graph;
           })
 
 
-        this.series = Graph;
+
     }
 };
 
