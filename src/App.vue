@@ -35,24 +35,24 @@
     <v-content>
       <v-container>
         <v-layout row wrap>
-          <v-flex md3><title-widget></title-widget></v-flex>
-          <v-flex md3><image-widget></image-widget></v-flex>
+          <v-flex md3><title-widget title="Temps moyen de mise à jour"></title-widget></v-flex>
+          <v-flex md3><image-widget title="Responsable des responsables" imgpath="./assets/pierre_le_bg.jpg" comment="En plus il est tout beau"></image-widget></v-flex>
           <v-flex md3><timer date="Nov 16, 2018 14:30:00"></timer></v-flex>
           <v-flex md3><top3></top3></v-flex>
         </v-layout>
         <v-layout row wrap>
+          <v-flex md12><chart-area></chart-area></v-flex>
+          <!--<v-flex md6><chart-candle></chart-candle></v-flex>-->
+        </v-layout>
+        <v-layout row wrap>
           <v-flex md6>
-            <v-flex md12><chart-area></chart-area></v-flex>
+            <v-flex md12><chart></chart></v-flex>
             <v-layout row wrap>
               <v-flex md6><progression titre="Badgeuses connectées"></progression></v-flex>
-              <v-flex md6><chart-circle></chart-circle></v-flex>
+              <v-flex md6><chart-circle titre="Utilisation des firmwares"></chart-circle></v-flex>
             </v-layout>
           </v-flex>
           <v-flex md6><calendar></calendar></v-flex>
-        </v-layout>
-        <v-layout row wrap>
-          <v-flex md6><chart></chart></v-flex>
-          <v-flex md6><chart-candle></chart-candle></v-flex>
         </v-layout>
           <v-layout row wrap>
             <v-flex md9><customized-table data-app></customized-table></v-flex>
@@ -126,7 +126,7 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
-  padding: 2%;
+  /*padding: 2%;*/
   margin: 2%;
 }
 

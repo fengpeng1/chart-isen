@@ -1,6 +1,7 @@
 <template>
   <v-card height="94%" class="widget">
-    <apexcharts class="apex" width="95%" type="pie" :options="options" :series="series"></apexcharts>
+    <div class="titlepie"><h3>{{titre}}</h3></div>
+    <apexcharts class="apex" width="100%" type="pie" :options="options" :series="series"></apexcharts>
     <!--<div class="button">
       <button class="up" @click="update">update</button>
     </div>-->
@@ -17,6 +18,12 @@ export default {
   components: {
     apexcharts: VueApexCharts
   },
+    props: {
+        titre: {
+            type: String,
+            required: true
+        }
+    },
   data: function() {
     return {
       options: {},
@@ -40,7 +47,7 @@ export default {
                 });
                 this.options = {
                     chart: {
-                        foreColor: '#fff'
+                        foreColor: '#000000'
                     },
                     labels: labels
                 }
@@ -75,8 +82,9 @@ widget.button.btse {
   vertical-align: center;
 }
 
-  .widget {
-    background: #3c3744;
-  }
+.titlepie {
+  margin-top: 5%;
+}
+
 </style>
 
