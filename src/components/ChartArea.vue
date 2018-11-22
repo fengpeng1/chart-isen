@@ -29,6 +29,10 @@ export default {
         xaxis: {
           type: 'datetime'
         },
+          yaxis: {
+            min: 0,
+              max: 100
+          },
         tooltip: {
           x: {
             format: 'dd/MM/yy HH:mm'
