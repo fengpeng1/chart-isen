@@ -1,31 +1,25 @@
 <template>
-    <!-- Material Design Icons are not working for now-->
-    <v-card height="94%" class="widget">
-        <v-data-table height="100%"
-                :headers="headers"
-                :items="nodes"
-                class="elevation-1"
-        >
-            <template slot="items" slot-scope="props">
-                <td class="text-xs-right">
-                    <v-dialog v-model="dialog" lazy absolute>
-                        <v-btn primary dark slot="activator">{{ props.item.mac }}</v-btn>
-                        <v-card>
-                            <v-card-title>
-                                <div class="headline">Batterie de {{ props.item.mac }}</div>
-                            </v-card-title>
-                            <v-card-text>
-                                <BatteryHistoryChart :mac="props.item.mac" :batteryHistory="JSON.parse(JSON.stringify(props.item.batteryHistory))"></BatteryHistoryChart>
-                            </v-card-text>
-                        </v-card>
-                    </v-dialog></td>
-                <td class="text-xs-right">{{ props.item.serialnumber }}</td>
-                <td class="text-xs-right">{{ props.item.firmware }}</td>
-                <td class="text-xs-right">{{ props.item.batterylvl }}</td>
-                <td class="text-xs-right">{{ props.item.info }}</td>
-            </template>
-        </v-data-table>
-    </v-card>
+    <div>
+         <BatteryHistoryChart v-if="modalVisible" @close="modalVisible = false" :mac="modalMac" :batteryHistory="modalBatteryHistory"></BatteryHistoryChart>
+
+        <!-- Material Design Icons are not working for now-->
+        <v-card height="94%" class="widget">
+            <v-data-table height="100%"
+                          :headers="headers"
+                          :items="nodes"
+                          class="elevation-1"
+            >
+                <template slot="items" slot-scope="props">
+                    <td class="text-xs-right">{{props.item.mac}}</td>
+                    <td class="text-xs-right">{{ props.item.serialnumber }}</td>
+                    <td class="text-xs-right">{{ props.item.firmware }}</td>
+                    <td class="text-xs-right"><v-btn primary @click="openModal(props.item.mac, JSON.parse(JSON.stringify(props.item.batteryHistory)))">{{ props.item.batterylvl }}</v-btn></td>
+                    <td class="text-xs-right">{{ props.item.info }}</td>
+                </template>
+            </v-data-table>
+        </v-card>
+    </div>
+
 </template>
 
 
@@ -57,10 +51,19 @@
                     { text: 'Last Info', value: 'info' },
                 ],
                 nodes: [],
-                dialog: false
+                modalVisible: false,
+                modalMac: null,
+                modalBatteryHistory: null
             }
         },
-
+        methods: {
+          openModal(mac, batteryHistory) {
+              console.log('test')
+              this.modalMac = mac
+              this.modalBatteryHistory = batteryHistory
+              this.modalVisible = true
+          }
+        },
         mounted() {
             NodesAPI.getNodes()
                 .then(node => {
