@@ -1,6 +1,6 @@
 <template>
   <v-card height="94%" class="widget">
-   <apexcharts class="apex" width="95%" type="area" :options="options" :series="series"></apexcharts>
+    <apexcharts class="apex" width="95%" type="area" :options="options" :series="series"></apexcharts>
 
   </v-card>
 </template>
@@ -8,7 +8,7 @@
 <script>
 import VueApexCharts from 'vue-apexcharts';
 
-import NodesAPI from '../services/api/Nodes'
+import NodesAPI from '../services/api/Nodes';
 
 export default {
   name: 'ChartArea',
@@ -18,9 +18,9 @@ export default {
   data: function() {
     return {
       options: {
-          chart: {
-              foreColor: '#fff'
-          },
+        chart: {
+          foreColor: '#fff'
+        },
         dataLabels: {
           enabled: false
         },
@@ -45,35 +45,31 @@ export default {
           }
         }
       },
-        legend: {
-          show: true
-        },
-      series: [],
+      legend: {
+        show: true
+      },
+      series: []
     };
   },
-    mounted() {
-      NodesAPI.getNodeByMac('4e4f0000000014c1')
-          .then(node => {
-              console.log(node.batteryHistory)
-          })
-        this.series = [
-            {
-                name: 'series1',
-                data: [50, 25, 78, 78, 42, 109, 100]
-            },
-            {
-                name: 'series2',
-                data: [11, 32, 45, 32, 34, 52, 41]
-            }
-        ]
-    }
+  mounted() {
+    NodesAPI.getNodeByMac('4e4f0000000014c1').then(node => {
+      // console.log(node.batteryHistory)
+    });
+    this.series = [
+      {
+        name: 'series1',
+        data: [50, 25, 78, 78, 42, 109, 100]
+      },
+      {
+        name: 'series2',
+        data: [11, 32, 45, 32, 34, 52, 41]
+      }
+    ];
+  }
 };
-
-
 </script>
 
 <style scoped>
-
 widget.button {
   float: right;
   vertical-align: center;
@@ -81,8 +77,8 @@ widget.button {
 widget.button.btse {
   vertical-align: center;
 }
-    .widget {
-        background-color: #3C3744;
-    }
+.widget {
+  background-color: #3c3744;
+}
 </style>
 
