@@ -1,30 +1,59 @@
 <template>
   <v-card height="94%" class="widget">
-    <apexcharts class="apex" width="95%" type="pie" :options="options" :series="series"></apexcharts>
-    <div class="button">
+    <div class="titlepie"><h3>{{titre}}</h3></div>
+    <apexcharts class="apex" width="100%" type="pie" :options="options" :series="series"></apexcharts>
+    <!--<div class="button">
       <button class="up" @click="update">update</button>
-    </div>
+    </div>-->
   </v-card>
 </template>
 
 <script>
 import VueApexCharts from 'vue-apexcharts';
 
+import NodesAPI from '../services/api/Nodes'
+
 export default {
   name: 'ChartCircle',
   components: {
     apexcharts: VueApexCharts
   },
+    props: {
+        titre: {
+            type: String,
+            required: true
+        }
+    },
   data: function() {
     return {
-      options: {
-          chart: {
-              foreColor: '#fff'
-          }
-      },
-      series: [90, 55, 41, 17, 15]
+      options: {},
+      series: []
     };
   },
+    mounted: function() {
+        NodesAPI.getNodes()
+            .then(nodes => {
+                let nodesFirmwares = []
+                let firmwares = []
+                let labels = []
+                for (let i in nodes) {
+                    nodesFirmwares.push(nodes[i].nodeFirmware.filename)
+                }
+                let counts = {};
+                nodesFirmwares.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
+                Object.keys(counts).map(function(objectKey) {
+                    firmwares.push(counts[objectKey]);
+                    labels.push(objectKey)
+                });
+                this.options = {
+                    chart: {
+                        foreColor: '#000000'
+                    },
+                    labels: labels
+                }
+                this.series = firmwares
+            })
+    }/*,
   methods: {
     update() {
       const max = 100;
@@ -34,7 +63,7 @@ export default {
       });
       this.series = newData;
     }
-  }
+  }*/
 };
 </script>
 
@@ -53,8 +82,9 @@ widget.button.btse {
   vertical-align: center;
 }
 
-  .widget {
-    background: #3c3744;
-  }
+.titlepie {
+  margin-top: 5%;
+}
+
 </style>
 

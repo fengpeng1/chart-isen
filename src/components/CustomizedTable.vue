@@ -3,139 +3,85 @@
     <v-card height="94%" class="widget">
         <v-data-table height="100%"
                 :headers="headers"
-                :items="desserts"
+                :items="nodes"
                 class="elevation-1"
-                :dark="true"
         >
             <template slot="items" slot-scope="props">
-                <td>{{ props.item.name }}</td>
-                <td class="text-xs-right">{{ props.item.calories }}</td>
-                <td class="text-xs-right">{{ props.item.fat }}</td>
-                <td class="text-xs-right">{{ props.item.carbs }}</td>
-                <td class="text-xs-right">{{ props.item.protein }}</td>
-                <td class="text-xs-right">{{ props.item.iron }}</td>
+                <td class="text-xs-right">
+                    <v-dialog v-model="dialog" lazy absolute>
+                        <v-btn primary dark slot="activator">{{ props.item.mac }}</v-btn>
+                        <v-card>
+                            <v-card-title>
+                                <div class="headline">Batterie de {{ props.item.mac }}</div>
+                            </v-card-title>
+                            <v-card-text>
+                                <BatteryHistoryChart :mac="props.item.mac" :batteryHistory="JSON.parse(JSON.stringify(props.item.batteryHistory))"></BatteryHistoryChart>
+                            </v-card-text>
+                        </v-card>
+                    </v-dialog></td>
+                <td class="text-xs-right">{{ props.item.serialnumber }}</td>
+                <td class="text-xs-right">{{ props.item.firmware }}</td>
+                <td class="text-xs-right">{{ props.item.batterylvl }}</td>
+                <td class="text-xs-right">{{ props.item.info }}</td>
             </template>
         </v-data-table>
     </v-card>
 </template>
 
+
+
+
 <script>
+    import NodesAPI from '../services/api/Nodes'
+    import Top3 from './Top3'
+    import ChartCandle from './ChartCandle'
+    import BatteryHistoryChart from './BatteryHistoryChart'
+
     export default {
         name: "CustomizedTable",
+        components:{
+          Top3, ChartCandle, BatteryHistoryChart
+        },
         data () {
             return {
                 headers: [
                     {
-                        text: 'Dessert (100g serving)',
+                        text: 'MAC Number',
                         align: 'left',
                         sortable: false,
-                        value: 'name'
+                        value: 'mac'
                     },
-                    { text: 'Calories', value: 'calories' },
-                    { text: 'Fat (g)', value: 'fat' },
-                    { text: 'Carbs (g)', value: 'carbs' },
-                    { text: 'Protein (g)', value: 'protein' },
-                    { text: 'Iron (%)', value: 'iron' }
+                    { text: 'Serial Number', value: 'serialnumber' },
+                    { text: 'Firmware', value: 'firmware' },
+                    { text: 'Battery Level (%)', value: 'batterylvl' },
+                    { text: 'Last Info', value: 'info' },
                 ],
-                desserts: [
-                    {
-                        value: false,
-                        name: 'Frozen Yogurt',
-                        calories: 159,
-                        fat: 6.0,
-                        carbs: 24,
-                        protein: 4.0,
-                        iron: '1%'
-                    },
-                    {
-                        value: false,
-                        name: 'Ice cream sandwich',
-                        calories: 237,
-                        fat: 9.0,
-                        carbs: 37,
-                        protein: 4.3,
-                        iron: '1%'
-                    },
-                    {
-                        value: false,
-                        name: 'Eclair',
-                        calories: 262,
-                        fat: 16.0,
-                        carbs: 23,
-                        protein: 6.0,
-                        iron: '7%'
-                    },
-                    {
-                        value: false,
-                        name: 'Cupcake',
-                        calories: 305,
-                        fat: 3.7,
-                        carbs: 67,
-                        protein: 4.3,
-                        iron: '8%'
-                    },
-                    {
-                        value: false,
-                        name: 'Gingerbread',
-                        calories: 356,
-                        fat: 16.0,
-                        carbs: 49,
-                        protein: 3.9,
-                        iron: '16%'
-                    },
-                    {
-                        value: false,
-                        name: 'Jelly bean',
-                        calories: 375,
-                        fat: 0.0,
-                        carbs: 94,
-                        protein: 0.0,
-                        iron: '0%'
-                    },
-                    {
-                        value: false,
-                        name: 'Lollipop',
-                        calories: 392,
-                        fat: 0.2,
-                        carbs: 98,
-                        protein: 0,
-                        iron: '2%'
-                    },
-                    {
-                        value: false,
-                        name: 'Honeycomb',
-                        calories: 408,
-                        fat: 3.2,
-                        carbs: 87,
-                        protein: 6.5,
-                        iron: '45%'
-                    },
-                    {
-                        value: false,
-                        name: 'Donut',
-                        calories: 452,
-                        fat: 25.0,
-                        carbs: 51,
-                        protein: 4.9,
-                        iron: '22%'
-                    },
-                    {
-                        value: false,
-                        name: 'KitKat',
-                        calories: 518,
-                        fat: 26.0,
-                        carbs: 65,
-                        protein: 7,
-                        iron: '6%'
-                    }
-                ]
+                nodes: [],
+                dialog: false
             }
+        },
+
+        mounted() {
+            NodesAPI.getNodes()
+                .then(node => {
+                    for (let o of node){
+                        let line = {};
+                        line.mac = o.mac;
+                        line.serialnumber = o.serialNumber;
+                        line.firmware = o.nodeFirmware.description;
+                        line.batterylvl = o.batteryLevel;
+                        line.info = o.lastInfo;
+                        line.batteryHistory = o.batteryHistory
+                        this.nodes.push(line);
+                    }
+                })
+
+
+
         }
     }
 </script>
 
 <style scoped>
-    .v-data-table{
-        background-color: black;
-    }
+
 </style>

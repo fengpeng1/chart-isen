@@ -1,6 +1,6 @@
 <template>
-  <v-card height="94%" class="widget">
-     <apexcharts class="apex" width="95%" type="bar" :options="options" :series="series"></apexcharts>
+  <v-card height="100%" class="widget">
+    <apexcharts class="apex" width="100%" type="bar" :options="options" :series="series"></apexcharts>
     <div class="button">
       <button class="btse" @click="update">updata</button>
       <input v-model="number" type="number">
@@ -63,11 +63,10 @@ export default {
   }
 };
 
+
 </script>
 
 <style scoped>
-  .widget {
-    background: #3c3744;
-  }
+
 </style>
 

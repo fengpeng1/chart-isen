@@ -1,16 +1,32 @@
 <template>
     <v-card height="94%" class="widget">
-        <div class="title"><h3>Responsable des responsables</h3></div>
+        <div class="title"><h3>{{title}}</h3></div>
         <div class="img-container">
-            <img src="../assets/pierre_le_bg.jpg"/>
+            <img v-bind:src="imgpath"/>
         </div>
-        <div class="title-comment">En plus il est tout beau</div>
+        <div class="title-comment">{{comment}}</div>
     </v-card>
 </template>
 
 <script>
     export default {
-        name: "ImageWidget"
+        name: "ImageWidget",
+        data: function () {
+            return {
+                now: new Date().getTime()
+            }
+        },
+        props: {
+            title: {
+                type: String
+            },
+            imgpath: {
+                type: String
+            },
+            comment: {
+                type: String
+            }
+        },
     }
 
 
